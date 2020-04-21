@@ -1,0 +1,7 @@
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.csprojAssemblyReference.cache
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.csproj.CoreCompileInputs.cache
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\bin\Debug\CSharpForDummies.exe.config
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\bin\Debug\CSharpForDummies.exe
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\bin\Debug\CSharpForDummies.pdb
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.exe
+C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.pdb
