@@ -5,3 +5,10 @@ C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\bin\Debug\CSharpFo
 C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\bin\Debug\CSharpForDummies.pdb
 C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.exe
 C:\Users\tobbe\source\repos\CSharpForDummies\CSharpForDummies\obj\Debug\CSharpForDummies.pdb
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\bin\Debug\CSharpForDummies.exe.config
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\bin\Debug\CSharpForDummies.exe
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\bin\Debug\CSharpForDummies.pdb
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\obj\Debug\CSharpForDummies.csprojAssemblyReference.cache
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\obj\Debug\CSharpForDummies.csproj.CoreCompileInputs.cache
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\obj\Debug\CSharpForDummies.exe
+C:\Users\tobpog11\Documents\GitHub\ScriptingCrashCourse\CSharpForDummies\obj\Debug\CSharpForDummies.pdb
