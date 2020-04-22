@@ -41,6 +41,7 @@ namespace CSharpForDummies
              * 
              * Skapa en arbets grupp på 4 personer som sparas i en lista
              * Där varje arbetare ska ha ett namn, ålder, kön, lön,              
+             * Som sedans sparas till en fil
              * 
              * 
              * Inheritance?
@@ -53,8 +54,8 @@ namespace CSharpForDummies
              * 
              */
 
-            Steg1();
-            //Steg2();
+            //Steg1();
+            Steg2();
             //Steg3();
 
             //Uppgift1();
@@ -64,7 +65,7 @@ namespace CSharpForDummies
             //Steg5();
 
             //Steg6();
-            Steg7();
+            //Steg7();
 
         }
 
@@ -86,10 +87,10 @@ namespace CSharpForDummies
             //Måste starta med en bokstav
 
             //Lokala variabler
-
+            
             bool testBool = true;
-
-            int testInteger = 0;
+            
+            int testInteger = -1230;
             uint testUnsingedInteger = 123;
 
             float testFloat = 3.14f;
@@ -105,17 +106,18 @@ namespace CSharpForDummies
             //+=, -=, *=, /=, %=
             //++, --
             //!
-
+            testInteger--;
             testInteger += 10*5+5;
-            
+
+
             Console.WriteLine(testInteger);
 
             testString += testCharacter;
 
             Console.WriteLine(testString);
 
-            testInteger = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Your input was :" + testInteger);
+            testString = Console.ReadLine();
+            Console.WriteLine("Your input was :" + testString);
 
             //Conversion
             //ui = (int)i;
@@ -126,20 +128,53 @@ namespace CSharpForDummies
         //-------------------------------------------------------
         static void Steg2() // Conditions
         {
-            bool testBool1 = true, testBool2 = false;
+            int testInteger = 0;
 
-            testBool2 = !testBool2;
-
-            if (testBool1 == testBool2)
+            if (testInteger == 0)
             {
-                Console.WriteLine("Hello World");
+                Console.WriteLine("Hello");
+            }
+            else if (testInteger == 1)
+            {
+                Console.WriteLine("Goodbye");
             }
             else
             {
-                Console.WriteLine("Goodbye World");
+                Console.WriteLine("Undefined");
             }
 
-            int testInt = testBool1 ? 1 : 2;
+            
+            switch (testInteger)
+            {
+                case 0:
+                    Console.WriteLine("Hello");
+                    break;
+                case 1:
+                    Console.WriteLine("Goodbye");
+                    break;
+                case 2:
+                    Console.WriteLine("Hello");
+                    break;
+                default:
+                    break;
+            }
+
+
+            bool testBool = true;
+
+            int testInt;
+            if (testBool == true)
+            {
+                testInt = 1;
+            }
+            else
+            {
+                testInt = 2;
+            }
+
+            testInt = testBool ? 1 : 2;
+
+
 
         }
         //-------------------------------------------------------
