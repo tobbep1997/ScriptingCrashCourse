@@ -75,5 +75,10 @@
         {
             return "Name: " + this.m_name + "\nAge : " + this.m_age + "\nSalary : " + this.m_salary;
         }
+
+        public string ToSaveString()
+        {
+            return this.m_name + "\n" + this.m_age + "\n" + this.m_salary;
+        }
     }
 }

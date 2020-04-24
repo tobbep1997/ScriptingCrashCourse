@@ -43,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PLC\Comm.cs" />
-    <Compile Include="PLC\Component.cs" />
-    <Compile Include="PLC\In.cs" />
-    <Compile Include="PLC\IO.cs" />
-    <Compile Include="PLC\Out.cs" />
+    <Compile Include="Classes\Base.cs" />
+    <Compile Include="Classes\IInterface.cs" />
+    <Compile Include="Classes\TestClass.cs" />
+    <Compile Include="Classes\TestClass2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestClass.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="Arbetare.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

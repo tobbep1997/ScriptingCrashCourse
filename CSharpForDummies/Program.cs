@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.IO;
+using CSharpForDummies.Classes;
+using System.Text;
 
 #pragma warning disable CS0219  // Variable is assigned but its value is never used
 #pragma warning disable CS0168  // Variable is declared but never used
@@ -11,7 +14,7 @@ namespace CSharpForDummies
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static int Main(string[] args)
         {
 
             /*
@@ -53,50 +56,24 @@ namespace CSharpForDummies
 
             //Steg1();
             //Steg2();
-            Steg3();
-            //Uppgift1();
+            //Steg3();
+            
             //Steg4();
             //Steg5();
             //Steg6();
             //Steg7();
-            int nummerfrånplc = 0;
-            switch (nummerfrånplc)
+            try
             {
-                case 10:
-                    //Gör saker
-                    
-
-                    break;
-                default:
-                    break;
+                //Steg8();
             }
-
-            int i = Add(1, 4);
-            Console.WriteLine(i);
-            string name;
-            int age = 0;
-
-            Console.WriteLine("Whats your name?");
-            while ((name = Console.ReadLine()) == string.Empty) 
+            catch (Exception e)
             {
-                if (name == string.Empty)
-                    Console.WriteLine("Please Enter your name...");
+                Console.WriteLine(e.Message);
             }
-            
-            Console.WriteLine("Whats your age?");
-            while (age == 0)
-            {
-                try
-                {
-                    age = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (System.Exception e)
-                {
-                    Console.WriteLine("Please Enter an number...");
-                }
-            }
-            
-            Console.WriteLine("Your name is " + name + " and your age is: " + age);
+            //Steg9();
+            //Uppgift1();
+            Uppgift2();
+            return 0;
         }
 
 
@@ -285,24 +262,24 @@ namespace CSharpForDummies
         //-------------------------------------------------------
         private static void Uppgift1()
         {
-            int[] array = new int[64];
+            Console.WriteLine("Allocating memory");
+            int[] array = new int[100000];
 
             Random rand = new Random();
 
             //Generara slumpade nummer och fyller upp array.
-
+            Console.WriteLine("Generating numbers");
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next() % 1000 + 1;
+                array[i] = rand.Next();
             }
-
-            PrintArray(array);
+            Console.WriteLine("Start sorting");
+            //PrintArray(array);
             bool isSorted = false;
             //Sortera array med bubble sort
             while (!isSorted)
             {
                 isSorted = true;
-
                 for (int i = 0; i < array.Length - 1; i++)
                 {
                     if (array[i] > array[i + 1])
@@ -314,8 +291,8 @@ namespace CSharpForDummies
                     }
                 }
             }
-
-            PrintArray(array);
+            Console.WriteLine("Sorting completed");
+            //PrintArray(array);
         }
 
         private static void PrintArray(int[] array)
@@ -374,9 +351,6 @@ namespace CSharpForDummies
             public string Name;
             public int Age;
             public Gender Gender;
-
-            private int m_test;
-            private int m_test2;
         }
 
         private static void Steg5() // enums && structs
@@ -428,7 +402,108 @@ namespace CSharpForDummies
                 sw.WriteLine("Test");
             }
 
+
+
         }
         //-------------------------------------------------------
+        private static void Uppgift2()
+        {
+            Random rand = new Random(DateTime.Now.Millisecond);
+            List<Arbetare> arbetare = new List<Arbetare>();
+            for (int i = 0; i < 10; i++)
+            {
+                arbetare.Add(new Arbetare(Encoding.ASCII.GetString(BitConverter.GetBytes(i.GetHashCode())), rand.Next(18, 65), rand.Next(30000, 65000)));
+            }
+
+            string path = @"Arbetare.txt";
+
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.WriteLine(arbetare.Count);
+                for (int i = 0; i < arbetare.Count; i++)
+                {
+                    sw.WriteLine(arbetare[i].GetName().ToString());
+                    sw.WriteLine(arbetare[i].GetAge().ToString());
+                    sw.WriteLine(arbetare[i].Salary.ToString());
+                }
+                sw.Close();
+            }
+
+            arbetare.Clear();
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                int antalArbetare = Convert.ToInt32(sr.ReadLine());
+
+                for (int i = 0; i < antalArbetare; i++)
+                {
+                    string name = sr.ReadLine();
+                    int age = Convert.ToInt32(sr.ReadLine());
+                    int salary = Convert.ToInt32(sr.ReadLine());
+                    arbetare.Add(new Arbetare(name, age, salary));
+                }
+                
+            }
+
+            for (int i = 0; i < arbetare.Count; i++)
+            {
+                Console.WriteLine(arbetare[i].ToString());
+            }
+        }
+        //-------------------------------------------------------
+        private static void Steg8() // Inheritance
+        {
+            Base b = new TestClass(123u);
+            TestClass t = new TestClass(123u);
+
+            Base b2 = new TestClass2(1234u);
+
+            Exception exception = null;
+
+            try
+            {
+                ((TestClass)b).TestClassFunction();
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+
+            try
+            {
+                ((TestClass2)b).TestClass2Function();
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+
+            if (exception != null)
+                throw exception;
+
+
+        }
+        //-------------------------------------------------------
+        private static void Steg9() // Threads
+        {
+            Thread thread = new Thread(new ThreadStart(ThreadTest));
+            thread.Start();
+
+            for (int i = 0; i < 20; i++)
+            {
+                Console.WriteLine("This is the main thread {0}", i + 1);
+            }
+            
+            
+            thread.Join();
+        }
+
+        private static void ThreadTest()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.WriteLine("This is the thread {0}", i + 1);
+            }
+        }
     }
 }
