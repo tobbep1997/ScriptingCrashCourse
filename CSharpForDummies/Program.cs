@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Data;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 #pragma warning disable CS0219  // Variable is assigned but its value is never used
 #pragma warning disable CS0168  // Variable is declared but never used
@@ -16,64 +9,99 @@ using System.Threading.Tasks;
 
 namespace CSharpForDummies
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+
             /*
-             * Types && Operators
-             * Console IO
-             * 
-             * Fråga efter namn ålder och sedan skriv ut.
-             * 
-             * Conditions
-             * Arrays && Collections
-             * Loops
-             * 
-             * Skapa en array med 64 slumpmässigt genererade nummer
-             * Sortera array med bubble sort
-             * Använd IsSorted(int[] array)
-             * 
-             * Methods 
-             * Enums && struct
-             * OOP
-             * File IO
-             * 
-             * Skapa en arbets grupp på 4 personer som sparas i en lista
-             * Där varje arbetare ska ha ett namn, ålder, kön, lön,              
-             * Som sedans sparas till en fil
-             * 
-             * 
-             * Inheritance?
-             * Abstract? C#?
-             * Interface?
-             * 
-             * Threads?
-             * Async compute????
-             * 
-             * 
-             */
+            * Types && Operators
+            * Console IO
+            * 
+            * Fråga efter namn ålder och sedan skriv ut.
+            * 
+            * Conditions
+            * Arrays && Collections
+            * Loops
+            * 
+            * Skapa en array med 64 slumpmässigt genererade nummer 
+            * Random rand = new Random();
+            * rand.Next(min, max)
+            * 
+            * Sortera array med bubble sort
+            * 
+            * 
+            * Methods 
+            * Enums && struct
+            * OOP
+            * File IO
+            * 
+            * Skapa en arbets grupp på 4 personer som sparas i en lista
+            * Där varje arbetare ska ha ett namn, ålder, kön, lön,              
+            * Som sedans sparas till en fil och läsas från fil
+            * 
+            * 
+            * Inheritance?
+            * Abstract? C#?
+            * Interface?
+            * 
+            * Threads?
+            * Async compute????
+            * 
+            * 
+            */
 
             //Steg1();
-            Steg2();
-            //Steg3();
-
+            //Steg2();
+            Steg3();
             //Uppgift1();
-
             //Steg4();
-
             //Steg5();
-
             //Steg6();
             //Steg7();
+            int nummerfrånplc = 0;
+            switch (nummerfrånplc)
+            {
+                case 10:
+                    //Gör saker
+                    
 
+                    break;
+                default:
+                    break;
+            }
+
+            int i = Add(1, 4);
+            Console.WriteLine(i);
+            string name;
+            int age = 0;
+
+            Console.WriteLine("Whats your name?");
+            while ((name = Console.ReadLine()) == string.Empty) 
+            {
+                if (name == string.Empty)
+                    Console.WriteLine("Please Enter your name...");
+            }
+            
+            Console.WriteLine("Whats your age?");
+            while (age == 0)
+            {
+                try
+                {
+                    age = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine("Please Enter an number...");
+                }
+            }
+            
+            Console.WriteLine("Your name is " + name + " and your age is: " + age);
         }
 
 
-
-
         //-------------------------------------------------------
-        static void Steg1() // Types && operators
+        private static void Steg1() // Types && operators
         {
             //Olika typer
 
@@ -87,9 +115,9 @@ namespace CSharpForDummies
             //Måste starta med en bokstav
 
             //Lokala variabler
-            
+
             bool testBool = true;
-            
+
             int testInteger = -1230;
             uint testUnsingedInteger = 123;
 
@@ -107,7 +135,7 @@ namespace CSharpForDummies
             //++, --
             //!
             testInteger--;
-            testInteger += 10*5+5;
+            testInteger += 10 * 5 + 5;
 
 
             Console.WriteLine(testInteger);
@@ -123,10 +151,11 @@ namespace CSharpForDummies
             //ui = (int)i;
             //i = (int)ui;
 
-            
+
         }
+
         //-------------------------------------------------------
-        static void Steg2() // Conditions
+        private static void Steg2() // Conditions
         {
             int testInteger = 0;
 
@@ -143,7 +172,7 @@ namespace CSharpForDummies
                 Console.WriteLine("Undefined");
             }
 
-            
+
             switch (testInteger)
             {
                 case 0:
@@ -163,7 +192,7 @@ namespace CSharpForDummies
             bool testBool = true;
 
             int testInt;
-            if (testBool == true)
+            if (testBool)
             {
                 testInt = 1;
             }
@@ -174,20 +203,19 @@ namespace CSharpForDummies
 
             testInt = testBool ? 1 : 2;
 
-
-
         }
+
         //-------------------------------------------------------
-        static void Steg3() // arrays && Collections && loops
+        private static void Steg3() // arrays && Collections && loops
         {
 
             int[] array0;
             int[] array1 = new int[3];
             int[] array2 = new int[3] { 1, 2, 3 };
             int[] array3 = new int[3] { 3, 2, 1 };
-            int[] array4 = new int[3] { 3, 2, 1 };
-                         
+            int[] array4 = new int[3] { 2, 3, 1 };
 
+            
             int[,] tvåDimArray = new int[3, 4];
 
             int index = 0;
@@ -214,8 +242,9 @@ namespace CSharpForDummies
             for (int i = 0; i < array3.Length; i++)
             {
                 Console.WriteLine(array3[i]);
-            }
 
+            }
+            
             Console.WriteLine("Array 4");
 
             foreach (var item in array4)
@@ -234,26 +263,27 @@ namespace CSharpForDummies
             }
 
             List<int> genericCollection = new List<int>();
+            
 
             for (int i = 0; i < 64; i++)
             {
+                float f = 0.0f;
+                int j = (int)f;
                 genericCollection.Add((int)Math.Pow(i, 2));
             }
 
             genericCollection.RemoveAt(4); // tar bort det femte elementet
-
+            genericCollection.Sort();
             //LinkedList
             //Dictionary
             //SortedList
             //Hashset
             //Queue
             //Stack
-            
-
-            
         }
+
         //-------------------------------------------------------
-        static void Uppgift1()
+        private static void Uppgift1()
         {
             int[] array = new int[64];
 
@@ -263,7 +293,7 @@ namespace CSharpForDummies
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next() % 1000 + 1;                
+                array[i] = rand.Next() % 1000 + 1;
             }
 
             PrintArray(array);
@@ -272,7 +302,7 @@ namespace CSharpForDummies
             while (!isSorted)
             {
                 isSorted = true;
-                
+
                 for (int i = 0; i < array.Length - 1; i++)
                 {
                     if (array[i] > array[i + 1])
@@ -287,19 +317,25 @@ namespace CSharpForDummies
 
             PrintArray(array);
         }
-        static void PrintArray(int[] array)
+
+        private static void PrintArray(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 if (i < array.Length - 1)
+                {
                     Console.Write(array[i] + ", ");
+                }
                 else
+                {
                     Console.WriteLine(array[i]);
+                }
             }
             Console.WriteLine();
         }
+
         //-------------------------------------------------------
-        static void Steg4() // metoder
+        private static void Steg4() // metoder
         {
             DoSomething();
 
@@ -309,44 +345,50 @@ namespace CSharpForDummies
             int integer2 = Add(integer, 2);
             Console.WriteLine(integer2);
         }
-        static void DoSomething() // "Block"
+
+        private static void DoSomething() // "Block"
         {
             //Do Something...
         }
-        static int GetInt()
+
+        private static int GetInt()
         {
             return 1;
         }
-        static int Add(int a, int b)
+
+        private static int Add(int a, int b)
         {
             return a + b;
         }
+
         //-------------------------------------------------------
-        enum Gender
+        private enum Gender
         {
             Male,
             Female,
             Other
         }
-        struct Person
-        {
-            public string name;
-            public int age;
-            public Gender gender;
 
-            private int test;
-            int test2;
+        private struct Person
+        {
+            public string Name;
+            public int Age;
+            public Gender Gender;
+
+            private int m_test;
+            private int m_test2;
         }
 
-        static void Steg5() // enums && structs
+        private static void Steg5() // enums && structs
         {
             Person person;
-            person.name = "Gustav";
-            person.age = 22;
-            person.gender = Gender.Other;
+            person.Name = "Gustav";
+            person.Age = 22;
+            person.Gender = Gender.Other;
         }
+
         //-------------------------------------------------------
-        static void Steg6()
+        private static void Steg6()
         {
             Arbetare fredrik = new Arbetare("Fredrik", 18);
             Arbetare joel = new Arbetare("Joel", 55, 55000);
@@ -357,21 +399,20 @@ namespace CSharpForDummies
             fredrik.Raise(500);
 
             Console.WriteLine(fredrik.ToString());
-            
-
         }
+
         //-------------------------------------------------------
-        static void Steg7() //File IO
+        private static void Steg7() //File IO
         {
             string path = @"TestFile.txt";
 
-            
-            using(StreamWriter sw = File.CreateText(path))
+
+            using (StreamWriter sw = File.CreateText(path))
             {
                 sw.WriteLine("Hello World");
             }
-            
-           
+
+
 
             string lineInput;
             using (StreamReader sr = File.OpenText(path))
@@ -380,7 +421,7 @@ namespace CSharpForDummies
                 {
                     Console.WriteLine(lineInput);
                 }
-                
+
             }
             using (StreamWriter sw = File.AppendText(path))
             {
