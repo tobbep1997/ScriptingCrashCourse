@@ -71,8 +71,8 @@ namespace CSharpForDummies
                 Console.WriteLine(e.Message);
             }
             //Steg9();
-            //Uppgift1();
-            Uppgift2();
+            Uppgift1();
+            //Uppgift2();
             return 0;
         }
 
@@ -263,7 +263,7 @@ namespace CSharpForDummies
         private static void Uppgift1()
         {
             Console.WriteLine("Allocating memory");
-            int[] array = new int[100000];
+            int[] array = new int[100];
 
             Random rand = new Random();
 
@@ -271,10 +271,10 @@ namespace CSharpForDummies
             Console.WriteLine("Generating numbers");
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next();
+                array[i] = rand.Next() % 100 + 1;
             }
             Console.WriteLine("Start sorting");
-            //PrintArray(array);
+            PrintArray(array);
             bool isSorted = false;
             //Sortera array med bubble sort
             while (!isSorted)
@@ -292,7 +292,7 @@ namespace CSharpForDummies
                 }
             }
             Console.WriteLine("Sorting completed");
-            //PrintArray(array);
+            PrintArray(array);
         }
 
         private static void PrintArray(int[] array)
